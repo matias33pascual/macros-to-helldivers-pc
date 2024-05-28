@@ -1,0 +1,36 @@
+.button {
+  align-items: center;
+  background: #1f2020;
+  border-color: #feea01;
+  border-style: solid;
+  border-width: 0.0625rem;
+  box-sizing: border-box;
+  color: #feea01;
+  cursor: pointer;
+  display: flex;
+  font-family:
+    Geist,
+    -apple-system,
+    BlinkMacSystemFont,
+    Roboto,
+    'Helvetica Neue',
+    arial,
+    sans-serif;
+  font-size: 0.875rem;
+  font-weight: 500;
+  gap: 0.25rem;
+  height: 2.125rem;
+  justify-content: center;
+  line-height: 1.25rem;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  transition: all 150ms ease;
+  width: fit-content;
+
+  &:hover {
+    background-color: #454545;
+  }
+  &:active {
+    background-color: #4f4f4f;
+  }
+}

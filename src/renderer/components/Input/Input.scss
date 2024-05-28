@@ -1,0 +1,55 @@
+.input-container {
+  align-items: center;
+  background: #0a0a0a;
+  border-color: #4f4f4f;
+  border-style: solid;
+  border-width: var(--nimbus-shape-border-width-1);
+  display: flex;
+  overflow: hidden;
+  position: relative;
+  transition: border-color 100ms ease;
+  width: 100%;
+
+  &:hover {
+    border-color: #feea01;
+  }
+  &:has(> input:focus) {
+    border-color: #feea01;
+  }
+  &.input-container--focused {
+    border-color: #feea01;
+  }
+  &.input-container--hidden-caret {
+    caret-color: transparent;
+  }
+
+  input {
+    background-color: transparent;
+    border: none;
+    box-sizing: border-box;
+    color: #fff;
+    font-size: 0.875rem;
+    font-weight: 400;
+    height: 2rem;
+    padding: 0.5rem;
+    transition: all 150ms ease;
+    width: 100%;
+
+    &:focus-visible {
+      outline: none;
+    }
+  }
+
+  button {
+    appearance: none;
+    background: transparent;
+    border: none;
+    padding: 0;
+  }
+  &.input-container--append-start button {
+    padding-left: 0.5rem;
+  }
+  &.input-container--append-end button {
+    padding-right: 0.5rem;
+  }
+}
