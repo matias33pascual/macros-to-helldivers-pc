@@ -11,4 +11,13 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+
+  .app-container {
+    display: flex;
+    max-width: 350px;
+    flex-direction: column;
+    align-items: stretch;
+    margin: auto;
+    gap: 1rem;
+  }
 }

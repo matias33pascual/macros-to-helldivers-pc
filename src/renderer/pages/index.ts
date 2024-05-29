@@ -1,2 +1,2 @@
-export * from './HomePage';
-export * from './SettingsPage';
+export * from "./ConnectionCard";
+export * from "./SettingsCard";

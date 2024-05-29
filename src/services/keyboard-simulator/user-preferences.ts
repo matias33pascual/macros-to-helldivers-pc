@@ -14,7 +14,7 @@ export interface UserKeys {
   right: string;
 }
 
-type UserKey = "openMenu" | "isHold" | "up" | "down" | "left" | "right";
+type UserKey = keyof UserKeys;
 
 export default class UserPreferences {
   static openMenu = "control";

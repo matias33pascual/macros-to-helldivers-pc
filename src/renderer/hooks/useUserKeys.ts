@@ -1,9 +1,10 @@
 import { ipcRenderer } from "electron";
 import { useEffect, useState } from "react";
+import { UserKeys } from "../../services/keyboard-simulator/user-preferences";
 
-const initialUserKeys = {
+const initialUserKeys: UserKeys = {
   openMenu: "",
-  isHold: "",
+  isHold: false,
   up: "",
   down: "",
   left: "",
@@ -20,7 +21,17 @@ export function useUserKeys() {
   }, []);
 
   const setUserKey = (key: string, value: string | boolean) => {
-    const newKeys = { ...userKeys, [key]: value };
+    let newKeys: UserKeys = { ...userKeys };
+
+    // If key is already used, remove it
+    Object.keys(newKeys).forEach((k: keyof UserKeys) => {
+      if (newKeys[k] === value) {
+        newKeys = { ...newKeys, [k]: "" };
+      }
+    });
+
+    newKeys = { ...newKeys, [key]: value };
+
     setUserKeys(newKeys);
     ipcRenderer.invoke("set-keys", newKeys);
   };
