@@ -18,8 +18,8 @@ const createWindow = (): void => {
   // Create the browser window.
   const mainWindow = new BrowserWindow({
     title: "MacroSync Desktop: Helldivers Edition",
-    width: 1024,
-    height: 768,
+    width: 600,
+    height: 900,
     webPreferences: {
       nodeIntegration: true,
       contextIsolation: false,

@@ -8,7 +8,7 @@ export function ConnectionCard() {
 
   return (
     <div className="connection-card">
-      <Card title="Direccion IP">
+      <Card title="DIRECCION IP">
         <div className="connection-card__content">
           <Input placeholder="IP" value={ip} readOnly />
         </div>

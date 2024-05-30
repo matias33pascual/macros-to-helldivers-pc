@@ -6,9 +6,8 @@ export function useGetConnectionInfo() {
 
   const getConnectionInfo = async () => {
     const ip = await ipcRenderer.invoke("get-ip");
-    const port = await ipcRenderer.invoke("get-port");
 
-    setIp(`${ip}:${port}`);
+    setIp(`${ip}`);
   };
 
   useEffect(() => {

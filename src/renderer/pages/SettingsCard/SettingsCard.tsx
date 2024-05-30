@@ -1,4 +1,5 @@
-import { Icon } from '@nimbus-ds/components';
+/* eslint-disable import/no-unresolved */
+import { Icon } from "@nimbus-ds/components";
 import {
   AlignLeftIcon,
   ChevronDownIcon,
@@ -6,10 +7,10 @@ import {
   ChevronRightIcon,
   ChevronUpIcon,
   DragIcon,
-} from '@nimbus-ds/icons';
-import { Card, Input } from 'renderer/components';
-import { CUSTOM_KEY_MAPPING } from 'renderer/constants';
-import { useUserKeys } from 'renderer/hooks';
+} from "@nimbus-ds/icons";
+import { Card, Input } from "renderer/components";
+import { CUSTOM_KEY_MAPPING } from "renderer/constants";
+import { useUserKeys } from "renderer/hooks";
 
 export function SettingsPage() {
   const { userKeys, setUserKey } = useUserKeys();
@@ -25,15 +26,16 @@ export function SettingsPage() {
   };
 
   const handleChangeIsHold = () => {
-    setUserKey('isHold', !userKeys.isHold);
-  }
+    setUserKey("isHold", !userKeys.isHold);
+  };
 
   return (
-    <Card title="Keys settings">
+    <Card title="MENU DE ESTRATAGEMAS">
       <Input
         name="openMenu"
-        placeholder="Open stratagem's menu"
-        append={<Icon source={<DragIcon />} />}
+        label="ABRIR MENU"
+        placeholder="Abrir menu de estratagemas"
+        append={<Icon source={<AlignLeftIcon />} />}
         appendPosition="start"
         hiddenCaret
         value={userKeys.openMenu}
@@ -42,17 +44,17 @@ export function SettingsPage() {
       />
       <Input
         name="isHold"
-        placeholder="Press/hold key to open menu"
-        append={<Icon source={<AlignLeftIcon />} />}
-        appendPosition="start"
+        label="MODO DE MENU"
+        placeholder="Presionar / Mantener"
         hiddenCaret
-        value={userKeys.isHold ? 'Hold to open menu' : 'Press to open menu'}
+        value={userKeys.isHold ? "Mantener" : "Presionar"}
         readOnly
         onClick={handleChangeIsHold}
       />
       <Input
         name="up"
-        placeholder="Up arrow key"
+        label="ARRIBA"
+        placeholder="ARRIBA"
         append={<Icon source={<ChevronUpIcon />} />}
         appendPosition="start"
         hiddenCaret
@@ -62,7 +64,8 @@ export function SettingsPage() {
       />
       <Input
         name="down"
-        placeholder="Down arrow key"
+        label="ABAJO"
+        placeholder="ABAJO"
         append={<Icon source={<ChevronDownIcon />} />}
         appendPosition="start"
         hiddenCaret
@@ -72,7 +75,8 @@ export function SettingsPage() {
       />
       <Input
         name="left"
-        placeholder="Left arrow key"
+        label="IZQUIERDA"
+        placeholder="IZQUIERDA"
         append={<Icon source={<ChevronLeftIcon />} />}
         appendPosition="start"
         hiddenCaret
@@ -82,7 +86,8 @@ export function SettingsPage() {
       />
       <Input
         name="right"
-        placeholder="Right arrow key"
+        label="DERECHA"
+        placeholder="DERECHA"
         append={<Icon source={<ChevronRightIcon />} />}
         appendPosition="start"
         hiddenCaret

@@ -5,16 +5,32 @@
   border-style: solid;
   border-width: var(--nimbus-shape-border-width-1);
   display: flex;
-  overflow: hidden;
   position: relative;
   transition: border-color 100ms ease;
   width: 100%;
+  margin: 2px 0;
 
   &:hover {
     border-color: #feea01;
+
+    label {
+      border: 1px solid #feea01;
+      color: white;
+    }
   }
   &:has(> input:focus) {
     border-color: #feea01;
+    color: white;
+    background-image: linear-gradient(
+      90deg,
+      hsl(0, 0%, 0%) 0%,
+      hsl(55, 100%, 18%) 50%,
+      hsl(55, 100%, 30%) 100%
+    );
+
+    label {
+      border: 1px solid #feea01;
+    }
   }
   &.input-container--focused {
     border-color: #feea01;
@@ -34,6 +50,7 @@
     padding: 0.5rem;
     transition: all 150ms ease;
     width: 100%;
+    text-transform: uppercase;
 
     &:focus-visible {
       outline: none;
@@ -51,5 +68,18 @@
   }
   &.input-container--append-end button {
     padding-right: 0.5rem;
+  }
+
+  label {
+    position: absolute;
+    bottom: 24px;
+    right: 4px;
+    background-color: #0a0a0a;
+    padding: 1px 4px;
+    border: 1px solid #4f4f4f;
+    color: #d6d6d6;
+    font-variant: small-caps;
+    font-size: 12px;
+    text-transform: uppercase;
   }
 }

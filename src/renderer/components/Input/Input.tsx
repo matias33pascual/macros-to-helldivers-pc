@@ -1,11 +1,12 @@
-import React, { JSX } from 'react';
-import './Input.scss';
+import React, { JSX } from "react";
+import "./Input.scss";
 
 interface InputProps {
   append?: React.ReactNode;
-  appendPosition?: 'start' | 'end';
+  appendPosition?: "start" | "end";
   focused?: boolean;
   hiddenCaret?: boolean;
+  label?: string;
 }
 
 export function Input({
@@ -13,24 +14,26 @@ export function Input({
   appendPosition,
   focused,
   hiddenCaret,
+  label,
   ...rest
-}: JSX.IntrinsicElements['input'] & InputProps) {
+}: JSX.IntrinsicElements["input"] & InputProps) {
   const appendClass =
-    appendPosition === 'start'
-      ? 'input-container--append-start'
-      : 'input-container--append-end';
+    appendPosition === "start"
+      ? "input-container--append-start"
+      : "input-container--append-end";
 
-  const focusedClass = focused ? 'input-container--focused' : '';
+  const focusedClass = focused ? "input-container--focused" : "";
 
-  const hiddenCaretClass = hiddenCaret ? 'input-container--hidden-caret' : '';
+  const hiddenCaretClass = hiddenCaret ? "input-container--hidden-caret" : "";
 
   return (
     <div
       className={`input-container ${appendClass} ${focusedClass} ${hiddenCaretClass}`}
     >
-      {appendPosition === 'start' && <button type="button">{append}</button>}
+      {appendPosition === "start" && <button type="button">{append}</button>}
       <input {...rest} />
-      {appendPosition === 'end' && <button type="button">{append}</button>}
+      {appendPosition === "end" && <button type="button">{append}</button>}
+      {label && <label>{label}</label>}
     </div>
   );
 }
