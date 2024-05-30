@@ -1,9 +1,3 @@
-/* eslint-disable lines-between-class-members */
-/* eslint-disable no-empty */
-/* eslint-disable no-console */
-/* eslint-disable class-methods-use-this */
-/* eslint-disable @typescript-eslint/no-unused-vars */
-
 /**
  * Responsabilidades:
  * . Carga todas las estratagemas del directorio json.
@@ -28,9 +22,15 @@ import path from "path";
 import StratagemModel, { StratagemData } from "./stratagems-model";
 import KeyboardSimulator from "../keyboard-simulator/keyboard-simulator";
 import UserPreferences from "../keyboard-simulator/user-preferences";
+import { Subscriber } from "../connection/interfaces/subscriber/subscriber-interface";
+import {
+  MessageInterface,
+  MessageType,
+} from "../connection/interfaces/message/message-interface";
 
-export default class StratagemsManager {
+export default class StratagemsManager implements Subscriber {
   private completeStratagemsList: StratagemModel[] = [];
+
   private preparedStratagemsList: StratagemModel[] = [];
 
   private keyboardSimulator: KeyboardSimulator = new KeyboardSimulator();
@@ -38,6 +38,21 @@ export default class StratagemsManager {
   constructor(keyboardDelay = 10) {
     this.loadStratagems();
     this.keyboardSimulator.setKeyboardDelay(keyboardDelay);
+  }
+
+  update(message: MessageInterface): void {
+    let messageValue: number[];
+
+    switch (message.type) {
+      case MessageType.PrepareStratagems:
+        messageValue = message.value.map((e: string) => Number.parseInt(e));
+        this.prepareSelectedStratagemsListByIds(messageValue);
+        break;
+
+      case MessageType.UseStratagem:
+        this.handleStratagemById(message.value);
+        break;
+    }
   }
 
   public prepareSelectedStratagemsListByIds(
@@ -60,29 +75,16 @@ export default class StratagemsManager {
         this.preparedStratagemsList.push(preparedStratagem);
       }
     });
-
-    console.log(this.preparedStratagemsList);
   }
 
   public handleStratagemById(id: number): void {
-    const stratagemInList: StratagemModel | undefined = this.getStratagemById(
+    const stratagem: StratagemModel | undefined = this.getStratagemById(
       id,
       this.preparedStratagemsList
     );
 
-    if (stratagemInList !== undefined) {
-      this.useStratagem(stratagemInList);
-    }
-  }
-
-  public handleStratagemTestById(id: number): void {
-    const stratagem: StratagemModel | undefined = this.getStratagemById(
-      id,
-      this.completeStratagemsList
-    );
-
-    if (stratagem) {
-      console.log(stratagem);
+    if (stratagem !== undefined) {
+      this.useStratagem(stratagem);
     }
   }
 
@@ -110,7 +112,6 @@ export default class StratagemsManager {
   ): StratagemModel | undefined {
     const selectedStratagem: StratagemModel | undefined = stratagemsList.find(
       (stratagem: StratagemModel) => {
-        // eslint-disable-next-line eqeqeq
         return stratagem.id == id;
       }
     );
@@ -124,7 +125,7 @@ export default class StratagemsManager {
   }
 
   private loadStratagems(): void {
-    const jsonDirectoryPath: string = path.join(__dirname, "json");
+    const jsonDirectoryPath = "./src/assets/json";
 
     try {
       this.loadStratagemsDirectory(jsonDirectoryPath);
@@ -152,19 +153,6 @@ export default class StratagemsManager {
 
     stratagemsData.forEach((stratagemData: StratagemData) => {
       this.completeStratagemsList.push(StratagemModel.fromJson(stratagemData));
-    });
-  }
-
-  /** Para usar en los test */
-  public showCompleteStratagemsList() {
-    this.completeStratagemsList.forEach((stratagem) => {
-      console.log(stratagem.showData());
-    });
-  }
-
-  public showPreparedStratagemsList() {
-    this.preparedStratagemsList.forEach((stratagem) => {
-      console.log(stratagem.showData());
     });
   }
 }

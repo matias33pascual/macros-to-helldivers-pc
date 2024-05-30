@@ -1,8 +1,8 @@
 import { ipcMain } from "electron";
-import ConnectionManager from "./connection/connection-manager";
 import UserPreferences, {
   UserKeys,
 } from "./keyboard-simulator/user-preferences";
+import ConnectionManager from "./connection/manager/connection-manager";
 
 const connectionManager = new ConnectionManager();
 

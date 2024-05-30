@@ -1,23 +1,16 @@
-import { Icon } from '@nimbus-ds/components';
-import { Card, Input } from 'renderer/components';
-import './ConnectionCard.scss';
-import { CopyIcon } from '@nimbus-ds/icons';
-import { useGetConnectionInfo } from 'renderer/hooks';
+/* eslint-disable import/no-unresolved */
+import "./ConnectionCard.scss";
+import { useGetConnectionInfo } from "renderer/hooks/useGetConnectionInfo";
+import { Card, Input } from "renderer/components";
 
 export function ConnectionCard() {
   const ip = useGetConnectionInfo();
 
   return (
     <div className="connection-card">
-      <Card title="Device pairing">
+      <Card title="Direccion IP">
         <div className="connection-card__content">
-          <Input
-            placeholder="IP"
-            append={<Icon source={<CopyIcon />} />}
-            appendPosition="end"
-            value={ip}
-            readOnly
-          />
+          <Input placeholder="IP" value={ip} readOnly />
         </div>
       </Card>
     </div>

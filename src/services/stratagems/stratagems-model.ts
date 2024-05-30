@@ -1,10 +1,3 @@
-/* eslint-disable no-use-before-define */
-/* eslint-disable class-methods-use-this */
-/* eslint-disable lines-between-class-members */
-/* eslint-disable no-empty-function */
-/* eslint-disable @typescript-eslint/no-unused-vars */
-/* eslint-disable no-useless-constructor */
-
 export default class StratagemsModel {
   public id = -1;
   public name = "";
