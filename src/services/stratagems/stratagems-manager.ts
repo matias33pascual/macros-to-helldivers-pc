@@ -17,9 +17,7 @@
  *        -> handleStratagemTestById
  */
 
-import fs from "fs";
-import path from "path";
-import StratagemModel, { StratagemData } from "./stratagems-model";
+import StratagemModel from "./stratagems-model";
 import KeyboardSimulator from "../keyboard-simulator/keyboard-simulator";
 import UserPreferences from "../keyboard-simulator/user-preferences";
 import { Subscriber } from "../connection/interfaces/subscriber/subscriber-interface";
@@ -28,6 +26,8 @@ import {
   MessageType,
 } from "../connection/interfaces/message/message-interface";
 
+import jsonStratagems from "./json/stratagems.json";
+
 export default class StratagemsManager implements Subscriber {
   private completeStratagemsList: StratagemModel[] = [];
 
@@ -35,7 +35,7 @@ export default class StratagemsManager implements Subscriber {
 
   private keyboardSimulator: KeyboardSimulator = new KeyboardSimulator();
 
-  constructor(keyboardDelay = 10) {
+  constructor(keyboardDelay = 25) {
     this.loadStratagems();
     this.keyboardSimulator.setKeyboardDelay(keyboardDelay);
   }
@@ -125,34 +125,15 @@ export default class StratagemsManager implements Subscriber {
   }
 
   private loadStratagems(): void {
-    const jsonDirectoryPath = "./src/assets/json";
+    jsonStratagems.forEach((stratagem) => {
+      const stratagemModel: StratagemModel = new StratagemModel(
+        Number.parseInt(stratagem.id),
+        stratagem.name,
+        stratagem.icon,
+        stratagem.keysCode
+      );
 
-    try {
-      this.loadStratagemsDirectory(jsonDirectoryPath);
-    } catch (error) {
-      console.log(`Error en StratagemsManager.loadStratagems: ${error}`);
-    }
-  }
-
-  private loadStratagemsDirectory(directoryPath: string): void {
-    const files = fs.readdirSync(directoryPath);
-
-    files.forEach((file) => {
-      if (file.endsWith(".json")) {
-        const filePath = path.join(directoryPath, file);
-
-        this.loadStratagemFile(filePath);
-      }
-    });
-  }
-
-  private loadStratagemFile(jsonFilePath: string): void {
-    const jsonData: string = fs.readFileSync(jsonFilePath, "utf-8");
-
-    const stratagemsData: StratagemData[] = JSON.parse(jsonData);
-
-    stratagemsData.forEach((stratagemData: StratagemData) => {
-      this.completeStratagemsList.push(StratagemModel.fromJson(stratagemData));
+      this.completeStratagemsList.push(stratagemModel);
     });
   }
 }

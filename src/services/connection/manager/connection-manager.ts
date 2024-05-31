@@ -121,6 +121,12 @@ export default class ConnectionManager implements Publisher {
       ConsoleColors.Green
     );
 
+    const welcomeMessage = {
+      message: "macrosync-server-helldivers",
+    };
+
+    ws.send(JSON.stringify(welcomeMessage));
+
     if (this.mainWindows) {
       this.mainWindows.webContents.send("client-connected");
     }
