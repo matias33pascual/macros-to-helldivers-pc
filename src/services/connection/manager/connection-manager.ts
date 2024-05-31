@@ -7,6 +7,7 @@ import { ConnectionUtils } from "../utils/connection-utils";
 import { Publisher } from "../interfaces/publisher/publisher-interface";
 import { Subscriber } from "../interfaces/subscriber/subscriber-interface";
 import { MessageInterface } from "../interfaces/message/message-interface";
+import { BrowserWindow } from "electron";
 
 export default class ConnectionManager implements Publisher {
   //* Singleton
@@ -26,6 +27,8 @@ export default class ConnectionManager implements Publisher {
   private _webSocketServer: any;
   private _ipAddress: string | null = null;
   private _port: number | null = null;
+
+  public mainWindows: BrowserWindow;
 
   public getIpAddress(): string | null {
     if (this._ipAddress == null) {
@@ -117,6 +120,10 @@ export default class ConnectionManager implements Publisher {
       `Cliente id: ${newClient.id} conectado.`,
       ConsoleColors.Green
     );
+
+    if (this.mainWindows) {
+      this.mainWindows.webContents.send("client-connected");
+    }
   }
 
   private _onClientMessageHandler(message: any): void {

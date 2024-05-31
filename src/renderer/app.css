@@ -31,18 +31,4 @@ body {
     margin: 0;
     width: 100%;
   }
-
-  .footer {
-    align-self: center;
-    color: #f3f3f3;
-    font-size: 14px;
-    text-align: center;
-    width: 80%;
-    margin: 0;
-
-    strong {
-      text-transform: uppercase;
-      color: #e7d425;
-    }
-  }
 }

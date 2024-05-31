@@ -1,5 +1,10 @@
 import "./app.css";
-import { ConnectionCard, PortCard, SettingsPage } from "./pages";
+import {
+  ConnectionCard,
+  PortCard,
+  SettingsPage,
+  UserConnectedMessage,
+} from "./pages";
 
 export default function App() {
   return (
@@ -8,10 +13,7 @@ export default function App() {
       <ConnectionCard />
       <PortCard />
       <SettingsPage />
-      <p className="footer">
-        Esta aplicacion funciona a traves de{" "}
-        <strong>MacroSync Mobile Helldivers</strong>
-      </p>
+      <UserConnectedMessage />
     </div>
   );
 }

@@ -1,5 +1,6 @@
-const os = require('os');
-const net = require('net');
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import os from "os";
+import net from "net";
 
 export class ConnectionUtils {
   public static findIpAddress(): string | null {
@@ -10,8 +11,8 @@ export class ConnectionUtils {
 
     Object.keys(interfaces).forEach((interfaceName) => {
       interfaces[interfaceName].forEach((iface: any) => {
-        if (!iface.internal && iface.family === 'IPv4') {
-          if (interfaceName.startsWith('Ethernet')) {
+        if (!iface.internal && iface.family === "IPv4") {
+          if (interfaceName.startsWith("Ethernet")) {
             ipAddress = iface.address;
             foundIpAddress = true;
           } else if (!foundIpAddress) {
@@ -28,9 +29,9 @@ export class ConnectionUtils {
     return new Promise((resolve) => {
       const tester = net.createServer();
 
-      tester.once('error', () => resolve(true));
+      tester.once("error", () => resolve(true));
 
-      tester.once('listening', () => {
+      tester.once("listening", () => {
         tester.close();
         resolve(false);
       });

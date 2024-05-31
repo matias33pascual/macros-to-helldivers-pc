@@ -6,7 +6,6 @@ import {
   ChevronLeftIcon,
   ChevronRightIcon,
   ChevronUpIcon,
-  DragIcon,
 } from "@nimbus-ds/icons";
 import { Card, Input } from "renderer/components";
 import { CUSTOM_KEY_MAPPING } from "renderer/constants";
