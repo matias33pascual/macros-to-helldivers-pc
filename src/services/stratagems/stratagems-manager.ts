@@ -98,11 +98,6 @@ export default class StratagemsManager implements Subscriber {
       keysCode
     );
 
-    const keyscodeMapedToUserPreferences: string[] =
-      UserPreferences.mapStratagemKeycodeToUserPreferences(stratagem);
-
-    preparedStratagem.keysCode = keyscodeMapedToUserPreferences;
-
     return preparedStratagem;
   }
 

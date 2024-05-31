@@ -4,6 +4,7 @@
 
 import StratagemsModel from "../stratagems/stratagems-model";
 import robot from "@jitsi/robotjs";
+import UserPreferences from "./user-preferences";
 
 export default class KeyboardSimulator {
   public setKeyboardDelay(delay: number): void {
@@ -17,8 +18,37 @@ export default class KeyboardSimulator {
   private pressStratagemKeysCode(stratagem: StratagemsModel) {
     const { keysCode } = stratagem;
 
+    let pressKey = "";
+
     keysCode.forEach((key: string) => {
-      this.simulateKeyOnKeyboard(key);
+      switch (key) {
+        case "up":
+          pressKey = UserPreferences.up;
+          break;
+
+        case "down":
+          pressKey = UserPreferences.down;
+          break;
+
+        case "left":
+          pressKey = UserPreferences.left;
+          break;
+
+        case "right":
+          pressKey = UserPreferences.right;
+          break;
+
+        default:
+          break;
+      }
+
+      if (key != "") {
+        this.simulateKeyOnKeyboard(pressKey);
+      } else {
+        console.log(
+          "Error en KeyboardSimulator.pressTratagemKeysCode: No se encontro la tecla del keycode de la estratagema."
+        );
+      }
     });
   }
 
