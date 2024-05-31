@@ -6,8 +6,6 @@
 import StratagemsModel from "../stratagems/stratagems-model";
 
 export interface UserKeys {
-  openMenu: string;
-  isHold: boolean;
   up: string;
   down: string;
   left: string;
@@ -17,9 +15,6 @@ export interface UserKeys {
 type UserKey = keyof UserKeys;
 
 export default class UserPreferences {
-  static openMenu = "control";
-  static isHold = false;
-
   static up = "up";
   static down = "down";
   static left = "left";
@@ -27,8 +22,6 @@ export default class UserPreferences {
 
   public static getUserAssignedKeys(): UserKeys {
     return {
-      openMenu: this.openMenu,
-      isHold: this.isHold,
       up: this.up,
       down: this.down,
       left: this.left,
@@ -41,8 +34,6 @@ export default class UserPreferences {
   }
 
   public static setUserAssignedKeys(userKeys: UserKeys) {
-    this.openMenu = userKeys.openMenu;
-    this.isHold = userKeys.isHold;
     this.up = userKeys.up;
     this.down = userKeys.down;
     this.left = userKeys.left;

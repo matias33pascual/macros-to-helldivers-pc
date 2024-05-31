@@ -3,7 +3,6 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 
 import StratagemsModel from "../stratagems/stratagems-model";
-import UserPreferences from "./user-preferences";
 import robot from "@jitsi/robotjs";
 
 export default class KeyboardSimulator {
@@ -12,17 +11,7 @@ export default class KeyboardSimulator {
   }
 
   public processStratagem(stratagem: StratagemsModel) {
-    this.openStratagemsMenu();
     this.pressStratagemKeysCode(stratagem);
-    this.closeStratagemsMenu();
-  }
-
-  private openStratagemsMenu() {
-    if (UserPreferences.isHold) {
-      robot.keyToggle(UserPreferences.openMenu, "down");
-    } else {
-      robot.keyTap(UserPreferences.openMenu);
-    }
   }
 
   private pressStratagemKeysCode(stratagem: StratagemsModel) {
@@ -31,14 +20,6 @@ export default class KeyboardSimulator {
     keysCode.forEach((key: string) => {
       this.simulateKeyOnKeyboard(key);
     });
-  }
-
-  private closeStratagemsMenu() {
-    if (UserPreferences.isHold) {
-      robot.keyToggle(UserPreferences.openMenu, "up");
-    } else {
-      robot.keyTap(UserPreferences.openMenu);
-    }
   }
 
   private simulateKeyOnKeyboard(key: string) {

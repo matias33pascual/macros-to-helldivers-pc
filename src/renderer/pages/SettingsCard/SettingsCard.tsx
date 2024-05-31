@@ -1,7 +1,6 @@
 /* eslint-disable import/no-unresolved */
 import { Icon } from "@nimbus-ds/components";
 import {
-  AlignLeftIcon,
   ChevronDownIcon,
   ChevronLeftIcon,
   ChevronRightIcon,
@@ -24,32 +23,8 @@ export function SettingsPage() {
     inputRef.blur();
   };
 
-  const handleChangeIsHold = () => {
-    setUserKey("isHold", !userKeys.isHold);
-  };
-
   return (
     <Card title="MENU DE ESTRATAGEMAS">
-      <Input
-        name="openMenu"
-        label="ABRIR MENU"
-        placeholder="Abrir menu de estratagemas"
-        append={<Icon source={<AlignLeftIcon />} />}
-        appendPosition="start"
-        hiddenCaret
-        value={userKeys.openMenu}
-        readOnly
-        onKeyDown={handleKeyDown}
-      />
-      <Input
-        name="isHold"
-        label="MODO DE MENU"
-        placeholder="Presionar / Mantener"
-        hiddenCaret
-        value={userKeys.isHold ? "Mantener" : "Presionar"}
-        readOnly
-        onClick={handleChangeIsHold}
-      />
       <Input
         name="up"
         label="ARRIBA"

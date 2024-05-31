@@ -3,8 +3,6 @@ import { useEffect, useState } from "react";
 import { UserKeys } from "../../services/keyboard-simulator/user-preferences";
 
 const initialUserKeys: UserKeys = {
-  openMenu: "",
-  isHold: false,
   up: "",
   down: "",
   left: "",
