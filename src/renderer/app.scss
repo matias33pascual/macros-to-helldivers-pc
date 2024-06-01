@@ -31,4 +31,13 @@ body {
     margin: 0;
     width: 100%;
   }
+
+  .connection-card {
+    .connection-card__content {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 0.5rem;
+    }
+  }
 }

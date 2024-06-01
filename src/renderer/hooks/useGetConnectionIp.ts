@@ -1,17 +1,16 @@
 import { ipcRenderer } from "electron";
 import { useEffect, useState } from "react";
 
-export function useGetConnectionInfo() {
+export function useGetConnectionIp() {
   const [ip, setIp] = useState("");
 
-  const getConnectionInfo = async () => {
+  const getConnectionIp = async () => {
     const ip = await ipcRenderer.invoke("get-ip");
-
     setIp(`${ip}`);
   };
 
   useEffect(() => {
-    getConnectionInfo();
+    getConnectionIp();
   }, []);
 
   return ip;

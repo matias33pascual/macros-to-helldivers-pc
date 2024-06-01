@@ -1,4 +1,3 @@
-/* eslint-disable import/no-unresolved */
 import { Icon } from "@nimbus-ds/components";
 import {
   ChevronDownIcon,
@@ -10,7 +9,7 @@ import { Card, Input } from "renderer/components";
 import { CUSTOM_KEY_MAPPING } from "renderer/constants";
 import { useUserKeys } from "renderer/hooks";
 
-export function SettingsPage() {
+export function SettingsCard() {
   const { userKeys, setUserKey } = useUserKeys();
 
   const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {

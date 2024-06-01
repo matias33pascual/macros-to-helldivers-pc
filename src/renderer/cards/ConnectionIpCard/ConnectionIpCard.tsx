@@ -1,10 +1,8 @@
-/* eslint-disable import/no-unresolved */
-import "./ConnectionCard.scss";
-import { useGetConnectionInfo } from "renderer/hooks/useGetConnectionInfo";
+import { useGetConnectionIp } from "renderer/hooks";
 import { Card, Input } from "renderer/components";
 
 export function ConnectionCard() {
-  const ip = useGetConnectionInfo();
+  const ip = useGetConnectionIp();
 
   return (
     <div className="connection-card">

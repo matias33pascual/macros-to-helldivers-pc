@@ -1,10 +1,8 @@
-/* eslint-disable import/no-unresolved */
-import "./PortCard.scss";
 import { Card, Input } from "renderer/components";
-import { useGetConnectionInfoPort } from "renderer/hooks/useGetConnectionInfoPort";
+import { useGetConnectionPort } from "renderer/hooks";
 
 export function PortCard() {
-  const port = useGetConnectionInfoPort();
+  const port = useGetConnectionPort();
 
   return (
     <div className="connection-card">
