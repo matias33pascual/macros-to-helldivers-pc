@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import os from "os";
-import net from "net";
+import getPort, { portNumbers } from "get-port";
 
 export class ConnectionUtils {
   public static findIpAddress(): string | null {
@@ -25,32 +25,13 @@ export class ConnectionUtils {
     return ipAddress;
   }
 
-  private static _isPortTaken(port: number): Promise<boolean> {
-    return new Promise((resolve) => {
-      const tester = net.createServer();
-
-      tester.once("error", () => resolve(true));
-
-      tester.once("listening", () => {
-        tester.close();
-        resolve(false);
-      });
-
-      tester.listen(port);
-    });
-  }
-
   public static async findAvailablePort(
     startPort: number,
     endPort: number
   ): Promise<number | null> {
-    for (let port = startPort; port <= endPort; port++) {
-      const isPortTaken = await this._isPortTaken(port);
-      if (!isPortTaken) {
-        return port;
-      }
-    }
-    return null;
+    const port = await getPort({ port: portNumbers(startPort, endPort) });
+
+    return port;
   }
 
   public static consoleLogWithColor(message: string, colorCode: number) {

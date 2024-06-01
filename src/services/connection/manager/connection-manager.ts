@@ -25,25 +25,28 @@ export default class ConnectionManager implements Publisher {
   private _clientsConnectedCount = 0;
 
   private _webSocketServer: any;
-  private _ipAddress: string | null = null;
-  private _port: number | null = null;
+  private static _ipAddress: string | null = null;
+  private static _port: number | null = null;
 
   public mainWindows: BrowserWindow;
 
-  public getIpAddress(): string | null {
-    if (this._ipAddress == null) {
-      this._ipAddress = ConnectionUtils.findIpAddress();
+  public static getIpAddress(): string | null {
+    if (ConnectionManager._ipAddress == null) {
+      ConnectionManager._ipAddress = ConnectionUtils.findIpAddress();
     }
 
-    return this._ipAddress;
+    return ConnectionManager._ipAddress;
   }
 
-  public async getPort(): Promise<number | null> {
-    if (this._port == null) {
-      this._port = await ConnectionUtils.findAvailablePort(43133, 65535);
+  public static async getPort(): Promise<number> {
+    if (ConnectionManager._port == null) {
+      ConnectionManager._port = await ConnectionUtils.findAvailablePort(
+        43133,
+        65535
+      );
     }
 
-    return this._port;
+    return ConnectionManager._port;
   }
 
   public async startServer(): Promise<void> {
@@ -51,8 +54,8 @@ export default class ConnectionManager implements Publisher {
       ConnectionServer.closeServer(this._webSocketServer);
     }
 
-    const host = this.getIpAddress();
-    const port = await this.getPort();
+    const host = ConnectionManager.getIpAddress();
+    const port = await ConnectionManager.getPort();
 
     this._webSocketServer = await ConnectionServer.startServer(host!, port!);
 

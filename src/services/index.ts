@@ -4,14 +4,12 @@ import UserPreferences, {
 } from "./keyboard-simulator/user-preferences";
 import ConnectionManager from "./connection/manager/connection-manager";
 
-const connectionManager = new ConnectionManager();
-
 ipcMain.handle("get-ip", () => {
-  return connectionManager.getIpAddress();
+  return ConnectionManager.getIpAddress();
 });
 
 ipcMain.handle("get-port", () => {
-  return connectionManager.getPort();
+  return ConnectionManager.getPort();
 });
 
 ipcMain.handle("get-keys", () => {
