@@ -1,8 +1,8 @@
 {
-  "name": "helldivers-sync-desktop",
-  "productName": "helldivers-sync-desktop",
+  "name": "macro-sync-desktop-helldivers",
+  "productName": "MacroSync Desktop Helldivers Edition",
   "version": "1.0.0",
-  "description": "My Electron application description",
+  "description": "MacroSync configurated to Helldivers",
   "main": ".webpack/main",
   "scripts": {
     "start": "electron-forge start",
@@ -42,9 +42,15 @@
   },
   "keywords": [],
   "author": {
-    "name": "Andrés Sánchez",
-    "email": "szandres50@gmail.com"
+    "name": "Matias Pascual",
+    "email": "matias33pascual@gmail.com"
   },
+  "contributors": [
+    {
+      "name": "Andrés Sánchez",
+      "email": "szandres50@gmail.com"
+    }
+  ],
   "license": "MIT",
   "dependencies": {
     "@jitsi/robotjs": "^0.6.13",

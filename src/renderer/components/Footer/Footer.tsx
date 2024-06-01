@@ -7,13 +7,17 @@ export function Footer() {
   return (
     <div className="footer">
       {userConnected ? (
-        <strong>MacroSync Mobile conectado</strong>
+        <p className="text user-connected">
+          <strong>MacroSync Mobile conectado</strong>
+        </p>
       ) : (
         <>
-          <span>Para utilizar esta aplicacion tiene que conectar</span>
-          <span>
+          <p className="text">
+            Para utilizar esta aplicacion tiene que conectar
+          </p>
+          <p className="text">
             <strong>MacroSync Mobile Helldivers</strong>
-          </span>
+          </p>
         </>
       )}
     </div>

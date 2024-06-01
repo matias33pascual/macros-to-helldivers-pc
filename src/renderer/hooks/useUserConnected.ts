@@ -5,15 +5,25 @@ export function useUserConnected() {
   const [userConnected, setUserConnected] = useState(false);
 
   useEffect(() => {
-    const handleUserConnected = () => {
-      setUserConnected(true);
-      console.log("usuario conectado");
+    const handleUserConnected = (value: boolean) => {
+      setUserConnected(value);
+
+      if (value) console.log("usuario conectado");
+      else console.log("Usuario desconectado");
     };
 
-    ipcRenderer.on("client-connected", handleUserConnected);
+    const handleUserConnectedEvent = () => handleUserConnected(true);
+    const handleUserDisconnectedEvent = () => handleUserConnected(false);
+
+    ipcRenderer.on("client-connected", handleUserConnectedEvent);
+    ipcRenderer.on("client-disconnected", handleUserDisconnectedEvent);
 
     return () => {
-      ipcRenderer.removeListener("client-connected", handleUserConnected);
+      ipcRenderer.removeListener("client-connected", handleUserConnectedEvent);
+      ipcRenderer.removeListener(
+        "client-disconnected",
+        handleUserDisconnectedEvent
+      );
     };
   }, []);
 

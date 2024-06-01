@@ -1,4 +1,5 @@
 import { app, BrowserWindow } from "electron";
+import path from "path";
 import "./services";
 import ConnectionManager from "./services/connection/manager/connection-manager";
 import StratagemsManager from "./services/stratagems/stratagems-manager";
@@ -29,6 +30,8 @@ const createWindow = (): void => {
   });
 
   mainWindow.menuBarVisible = false;
+
+  console.log(path.join(__dirname, "assets", "icon.png"));
 
   // and load the index.html of the app.
   mainWindow.loadURL(MAIN_WINDOW_WEBPACK_ENTRY);

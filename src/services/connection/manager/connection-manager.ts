@@ -119,11 +119,6 @@ export default class ConnectionManager implements Publisher {
 
     this._addClientToList(newClient);
 
-    ConnectionUtils.consoleLogWithColor(
-      `Cliente id: ${newClient.id} conectado.`,
-      ConsoleColors.Green
-    );
-
     const welcomeMessage = {
       message: "macrosync-server-helldivers",
     };
@@ -133,6 +128,11 @@ export default class ConnectionManager implements Publisher {
     if (this.mainWindows) {
       this.mainWindows.webContents.send("client-connected");
     }
+
+    ConnectionUtils.consoleLogWithColor(
+      `Cliente id: ${newClient.id} conectado.`,
+      ConsoleColors.Green
+    );
   }
 
   private _onClientMessageHandler(message: any): void {
@@ -162,6 +162,10 @@ export default class ConnectionManager implements Publisher {
       );
 
       return;
+    }
+
+    if (this.mainWindows) {
+      this.mainWindows.webContents.send("client-disconnected");
     }
 
     ConnectionUtils.consoleLogWithColor(
