@@ -13,9 +13,17 @@ export function useUserKeys() {
   const [userKeys, setUserKeys] = useState(initialUserKeys);
 
   useEffect(() => {
-    ipcRenderer.invoke("get-keys").then((userKeys) => {
-      setUserKeys(userKeys);
-    });
+    const storedValue = localStorage.getItem("user-keys");
+
+    if (!storedValue) {
+      ipcRenderer.invoke("get-keys").then((userKeys) => {
+        setUserKeys(userKeys);
+      });
+    } else {
+      const jsonData = JSON.parse(storedValue);
+
+      setUserKeys(jsonData);
+    }
   }, []);
 
   const setUserKey = (key: string, value: string | boolean) => {
@@ -31,7 +39,12 @@ export function useUserKeys() {
     newKeys = { ...newKeys, [key]: value };
 
     setUserKeys(newKeys);
+
     ipcRenderer.invoke("set-keys", newKeys);
+
+    const jsonData = JSON.stringify(newKeys);
+
+    localStorage.setItem("user-keys", jsonData);
   };
 
   return { userKeys, setUserKey };
