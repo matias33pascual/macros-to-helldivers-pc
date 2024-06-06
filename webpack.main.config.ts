@@ -1,7 +1,10 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
 import type { Configuration } from "webpack";
-
 import { rules } from "./webpack.rules";
-import { plugins } from "./webpack.plugins";
+
+const CopyPlugin = require("copy-webpack-plugin");
+
+import path from "path";
 
 export const mainConfig: Configuration = {
   /**
@@ -13,7 +16,16 @@ export const mainConfig: Configuration = {
   module: {
     rules,
   },
-  plugins,
+  plugins: [
+    new CopyPlugin({
+      patterns: [
+        {
+          from: path.resolve(__dirname, "src/assets/icon.ico"),
+          to: path.resolve(__dirname, ".webpack/main"),
+        },
+      ],
+    }),
+  ],
   resolve: {
     extensions: [".js", ".ts", ".jsx", ".tsx", ".css", ".json"],
   },

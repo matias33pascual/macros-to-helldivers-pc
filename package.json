@@ -1,6 +1,6 @@
 {
-  "name": "macro-sync-desktop-helldivers",
-  "productName": "MacroSync Desktop Helldivers Edition",
+  "name": "macro-sync-helldivers",
+  "productName": "MacroSync Helldivers",
   "version": "1.0.0",
   "description": "MacroSync configurated to Helldivers",
   "main": ".webpack/main",
@@ -57,6 +57,7 @@
     "@nimbus-ds/components": "^5.5.4",
     "@nimbus-ds/icons": "^1.5.0",
     "@nimbus-ds/styles": "^9.11.5",
+    "copy-webpack-plugin": "^6.3.1",
     "electron-squirrel-startup": "^1.0.1",
     "get-port": "^7.1.0",
     "react": "^18.3.1",

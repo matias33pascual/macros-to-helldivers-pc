@@ -18,7 +18,7 @@ if (require("electron-squirrel-startup")) {
 const createWindow = (): void => {
   // Create the browser window.
   const mainWindow = new BrowserWindow({
-    title: "MacroSync Desktop: Helldivers Edition",
+    title: "MacroSync Helldivers Edition",
     width: 600,
     height: 900,
     webPreferences: {
@@ -27,11 +27,12 @@ const createWindow = (): void => {
       preload: MAIN_WINDOW_PRELOAD_WEBPACK_ENTRY,
       devTools: true,
     },
+    icon: path.join(__dirname, "icon.ico"),
   });
 
-  mainWindow.menuBarVisible = false;
+  console.log(path.join(__dirname, "icon.ico"));
 
-  console.log(path.join(__dirname, "assets", "icon.png"));
+  mainWindow.menuBarVisible = false;
 
   // and load the index.html of the app.
   mainWindow.loadURL(MAIN_WINDOW_WEBPACK_ENTRY);
@@ -39,7 +40,7 @@ const createWindow = (): void => {
   ConnectionManager.instance.mainWindows = mainWindow;
 
   // Open the DevTools.
-  mainWindow.webContents.openDevTools();
+  // mainWindow.webContents.openDevTools();
 };
 
 // This method will be called when Electron has finished
