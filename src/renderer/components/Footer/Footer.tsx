@@ -8,7 +8,9 @@ export function Footer() {
 
   const handleLinkClick = (event: any) => {
     event.preventDefault();
-    shell.openExternal("https://www.google.com");
+    shell.openExternal(
+      "https://play.google.com/store/apps/details?id=com.macrosync.helldivers&hl=en-US&ah=Oa21Ap4Zo627XSmBHykjV3KRTps"
+    );
   };
 
   return (
