@@ -17,10 +17,25 @@ const config: ForgeConfig = {
   },
   rebuildConfig: {},
   makers: [
-    new MakerSquirrel({}),
+    new MakerSquirrel({
+      setupIcon: "./src/assets/icon.ico",
+    }),
     new MakerZIP({}, ["darwin"]),
     new MakerRpm({}),
     new MakerDeb({}),
+  ],
+  publishers: [
+    {
+      name: "@electron-forge/publisher-github",
+      config: {
+        repository: {
+          owner: "symphonic15",
+          name: "helldivers-sync-desktop",
+        },
+        prerelease: false,
+        draft: true,
+      },
+    },
   ],
   plugins: [
     new AutoUnpackNativesPlugin({}),
