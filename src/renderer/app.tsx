@@ -5,7 +5,7 @@ import { Footer } from "./components";
 export default function App() {
   return (
     <div className="app-container">
-      <p className="title">MacroSync Desktop Helldivers</p>
+      <p className="title">Macro Sync Desktop Helldivers</p>
       <ConnectionCard />
       <PortCard />
       <SettingsCard />

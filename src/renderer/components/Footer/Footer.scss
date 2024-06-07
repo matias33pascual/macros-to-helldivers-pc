@@ -3,13 +3,12 @@
   color: #f3f3f3;
   display: flex;
   flex-direction: column;
-  font-size: 14px;
+  font-size: 16px;
   text-align: center;
   width: 100%;
-  margin: 0;
 
   p {
-    margin: 8px 0;
+    margin: 4px 0;
     padding: 0;
   }
 
@@ -20,5 +19,46 @@
 
   .user-connected {
     margin-bottom: 40px;
+  }
+
+  .link {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: auto;
+    margin-top: 8px;
+    font-size: 16px;
+    text-decoration: none;
+
+    .link-button {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      padding: 6px 8px 4px 4px;
+      background-color: black;
+      color: white;
+      border: 1px solid white;
+      border-radius: 8px;
+      width: fit-content;
+      cursor: pointer;
+
+      &:hover {
+        border: 1px solid yellow;
+      }
+      &:active {
+        opacity: 0.8;
+        border: 1px solid white;
+      }
+    }
+
+    .google-icon {
+      background-image: url("./../../../assets/google-play.png");
+      background-repeat: no-repeat;
+      background-size: 22px;
+      width: 22px;
+      height: 22px;
+      display: inline-block;
+      padding-right: 2px;
+      padding-top: 2px;
+    }
   }
 }
