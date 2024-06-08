@@ -1,7 +1,7 @@
 {
   "name": "helldivers-sync-desktop",
   "productName": "MacroSync Helldivers 2",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "MacroSync for Helldivers 2",
   "main": ".webpack/main",
   "scripts": {

@@ -21,8 +21,16 @@ const config: ForgeConfig = {
       setupIcon: "./src/assets/icon.ico",
     }),
     new MakerZIP({}, ["darwin"]),
-    new MakerRpm({}),
-    new MakerDeb({}),
+    new MakerRpm({
+      options: {
+        icon: "./src/assets/icon.ico",
+      },
+    }),
+    new MakerDeb({
+      options: {
+        icon: "./src/assets/icon.ico",
+      },
+    }),
   ],
   publishers: [
     {
