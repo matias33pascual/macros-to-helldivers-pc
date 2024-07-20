@@ -1,0 +1,11 @@
+{
+  "ip_address": "DIRECCION IP",
+  "port": "PUERTO",
+  "stratagems_keyscode": "TECLAS PARA EL CODIGO DE LAS ESTRATAGEMAS",
+  "up": "ARRIBA",
+  "down": "ABAJO",
+  "left": "IZQUIERDA",
+  "right": "DERECHA",
+  "footer_message": "CONECTATE A",
+  "connected": "conectado"
+}

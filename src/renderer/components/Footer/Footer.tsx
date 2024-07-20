@@ -23,7 +23,7 @@ export function Footer() {
         <>
           <p>Para utilizar esta aplicacion tienes que conectar</p>
           <p>
-            <strong>Macro Sync Helldivers</strong>
+            <strong>Macros to Helldivers</strong>
           </p>
           <div className="link" onClick={handleLinkClick}>
             <p className="link-button">

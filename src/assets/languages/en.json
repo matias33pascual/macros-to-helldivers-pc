@@ -1,0 +1,11 @@
+{
+  "ip_address": "IP ADDRESS",
+  "port": "PORT",
+  "stratagems_keyscode": "STRATAGEMS KEY CODE",
+  "up": "UP",
+  "down": "DOWN",
+  "left": "LEFT",
+  "right": "RIGHT",
+  "footer_message": "CONNECT TO",
+  "connected": "connected"
+}
