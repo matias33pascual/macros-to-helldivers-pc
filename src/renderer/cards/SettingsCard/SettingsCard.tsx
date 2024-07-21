@@ -5,12 +5,16 @@ import {
   ChevronRightIcon,
   ChevronUpIcon,
 } from "@nimbus-ds/icons";
+import { useContext } from "react";
 import { Card, Input } from "renderer/components";
 import { CUSTOM_KEY_MAPPING } from "renderer/constants";
+import LanguageContext from "renderer/context/languageContext";
 import { useUserKeys } from "renderer/hooks";
 
 export function SettingsCard() {
   const { userKeys, setUserKey } = useUserKeys();
+
+  const language = useContext(LanguageContext);
 
   const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
     const inputRef = e.target as HTMLInputElement;
@@ -23,11 +27,11 @@ export function SettingsCard() {
   };
 
   return (
-    <Card title="MENU DE ESTRATAGEMAS">
+    <Card title={language.stratagems_keyscode}>
       <Input
         name="up"
-        label="ARRIBA"
-        placeholder="ARRIBA"
+        label={language.up}
+        placeholder={language.up}
         append={<Icon source={<ChevronUpIcon />} />}
         appendPosition="start"
         hiddenCaret
@@ -37,8 +41,8 @@ export function SettingsCard() {
       />
       <Input
         name="down"
-        label="ABAJO"
-        placeholder="ABAJO"
+        label={language.down}
+        placeholder={language.down}
         append={<Icon source={<ChevronDownIcon />} />}
         appendPosition="start"
         hiddenCaret
@@ -48,8 +52,8 @@ export function SettingsCard() {
       />
       <Input
         name="left"
-        label="IZQUIERDA"
-        placeholder="IZQUIERDA"
+        label={language.left}
+        placeholder={language.left}
         append={<Icon source={<ChevronLeftIcon />} />}
         appendPosition="start"
         hiddenCaret
@@ -59,8 +63,8 @@ export function SettingsCard() {
       />
       <Input
         name="right"
-        label="DERECHA"
-        placeholder="DERECHA"
+        label={language.right}
+        placeholder={language.right}
         append={<Icon source={<ChevronRightIcon />} />}
         appendPosition="start"
         hiddenCaret

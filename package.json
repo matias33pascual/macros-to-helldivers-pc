@@ -1,8 +1,8 @@
 {
-  "name": "macrosync-helldivers-desktop",
-  "productName": "MacroSync Helldivers 2",
+  "name": "macros-to-helldivers-pc",
+  "productName": "Macros to Helldivers PC",
   "version": "1.0.2",
-  "description": "MacroSync for Helldivers 2",
+  "description": "Macros to Helldivers PC",
   "main": ".webpack/main",
   "scripts": {
     "start": "electron-forge start",

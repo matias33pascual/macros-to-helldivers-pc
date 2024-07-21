@@ -1,10 +1,14 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
+import { useContext } from "react";
+import LanguageContext from "renderer/context/languageContext";
 import "./Footer.scss";
 import { useUserConnected } from "renderer/hooks/useUserConnected";
 const { shell } = window.require("electron");
 
 export function Footer() {
   const userConnected = useUserConnected();
+
+  const language = useContext(LanguageContext);
 
   const handleLinkClick = (event: any) => {
     event.preventDefault();
@@ -17,11 +21,11 @@ export function Footer() {
     <div className="footer">
       {userConnected ? (
         <p className="text user-connected">
-          <strong>Macro Sync Helldivers conectado</strong>
+          <strong>Macros to Helldivers {language.connected}</strong>
         </p>
       ) : (
         <>
-          <p>Para utilizar esta aplicacion tienes que conectar</p>
+          <p>{language.footer_message}</p>
           <p>
             <strong>Macros to Helldivers</strong>
           </p>

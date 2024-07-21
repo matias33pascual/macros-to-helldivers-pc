@@ -10,7 +10,6 @@ import { MessageInterface } from "../interfaces/message/message-interface";
 import { BrowserWindow } from "electron";
 
 export default class ConnectionManager implements Publisher {
-  //* Singleton
   private static _instance: ConnectionManager | null = null;
   public static get instance(): ConnectionManager {
     if (!ConnectionManager._instance) {
@@ -18,7 +17,6 @@ export default class ConnectionManager implements Publisher {
     }
     return ConnectionManager._instance;
   }
-  //* **********
 
   private _subscribersList: Subscriber[] = [];
   private _clientsConnectedList: ClientModel[] = [];
@@ -120,7 +118,7 @@ export default class ConnectionManager implements Publisher {
     this._addClientToList(newClient);
 
     const welcomeMessage = {
-      message: "macrosync-server-helldivers",
+      message: "macros-to-helldivers-pc",
     };
 
     ws.send(JSON.stringify(welcomeMessage));

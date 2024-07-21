@@ -18,7 +18,7 @@ if (require("electron-squirrel-startup")) {
 const createWindow = (): void => {
   // Create the browser window.
   const mainWindow = new BrowserWindow({
-    title: "MacroSync Helldivers Edition",
+    title: "Macros to Helldivers PC",
     width: 600,
     height: 900,
     webPreferences: {
