@@ -1,8 +1,8 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { useContext } from "react";
-import LanguageContext from "renderer/context/languageContext";
 import "./Footer.scss";
 import { useUserConnected } from "renderer/hooks/useUserConnected";
+import { LanguageContext } from "renderer/context/languageContext";
 const { shell } = window.require("electron");
 
 export function Footer() {
@@ -21,11 +21,13 @@ export function Footer() {
     <div className="footer">
       {userConnected ? (
         <p className="text user-connected">
-          <strong>Macros to Helldivers {language.connected}</strong>
+          <strong>
+            Macros to Helldivers {language.currentLanguage.connected}
+          </strong>
         </p>
       ) : (
         <>
-          <p>{language.footer_message}</p>
+          <p>{language.currentLanguage.footer_message}</p>
           <p>
             <strong>Macros to Helldivers</strong>
           </p>

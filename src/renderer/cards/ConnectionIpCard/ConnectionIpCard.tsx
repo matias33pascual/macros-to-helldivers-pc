@@ -1,7 +1,7 @@
 import { useGetConnectionIp } from "renderer/hooks";
 import { Card, Input } from "renderer/components";
-import LanguageContext from "renderer/context/languageContext";
 import { useContext } from "react";
+import { LanguageContext } from "renderer/context/languageContext";
 
 export function ConnectionCard() {
   const ip = useGetConnectionIp();
@@ -10,7 +10,7 @@ export function ConnectionCard() {
 
   return (
     <div className="connection-card">
-      <Card title={language.ip_address}>
+      <Card title={language.currentLanguage.ip_address}>
         <div className="connection-card__content">
           <Input placeholder="IP" value={ip} readOnly />
         </div>

@@ -8,7 +8,7 @@ import {
 import { useContext } from "react";
 import { Card, Input } from "renderer/components";
 import { CUSTOM_KEY_MAPPING } from "renderer/constants";
-import LanguageContext from "renderer/context/languageContext";
+import { LanguageContext } from "renderer/context/languageContext";
 import { useUserKeys } from "renderer/hooks";
 
 export function SettingsCard() {
@@ -27,11 +27,11 @@ export function SettingsCard() {
   };
 
   return (
-    <Card title={language.stratagems_keyscode}>
+    <Card title={language.currentLanguage.stratagems_keyscode}>
       <Input
         name="up"
-        label={language.up}
-        placeholder={language.up}
+        label={language.currentLanguage.up}
+        placeholder={language.currentLanguage.up}
         append={<Icon source={<ChevronUpIcon />} />}
         appendPosition="start"
         hiddenCaret
@@ -41,8 +41,8 @@ export function SettingsCard() {
       />
       <Input
         name="down"
-        label={language.down}
-        placeholder={language.down}
+        label={language.currentLanguage.down}
+        placeholder={language.currentLanguage.down}
         append={<Icon source={<ChevronDownIcon />} />}
         appendPosition="start"
         hiddenCaret
@@ -52,8 +52,8 @@ export function SettingsCard() {
       />
       <Input
         name="left"
-        label={language.left}
-        placeholder={language.left}
+        label={language.currentLanguage.left}
+        placeholder={language.currentLanguage.left}
         append={<Icon source={<ChevronLeftIcon />} />}
         appendPosition="start"
         hiddenCaret
@@ -63,8 +63,8 @@ export function SettingsCard() {
       />
       <Input
         name="right"
-        label={language.right}
-        placeholder={language.right}
+        label={language.currentLanguage.right}
+        placeholder={language.currentLanguage.right}
         append={<Icon source={<ChevronRightIcon />} />}
         appendPosition="start"
         hiddenCaret
