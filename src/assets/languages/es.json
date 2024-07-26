@@ -1,11 +1,11 @@
 {
-  "ip_address": "DIRECCION IP",
+  "ip_address": "DIRECCIÓN IP",
   "port": "PUERTO",
-  "stratagems_keyscode": "MENU DE ESTRATAGEMAS",
+  "stratagems_keyscode": "MENÚ DE ESTRATEGIAS",
   "up": "ARRIBA",
   "down": "ABAJO",
   "left": "IZQUIERDA",
   "right": "DERECHA",
-  "footer_message": "CONECTATE A",
+  "footer_message": "CONECTAR A",
   "connected": "conectado"
 }

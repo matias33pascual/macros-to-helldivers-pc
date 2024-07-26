@@ -2,6 +2,7 @@ import "./app.scss";
 import { ConnectionCard, PortCard, SettingsCard } from "./cards";
 import { Footer } from "./components";
 import LanguageProvider from "./context/languageContext";
+import SelectLanguage from "./cards/SelectLanguage/SelectLanguage";
 
 export default function App() {
   return (
@@ -11,6 +12,7 @@ export default function App() {
         <ConnectionCard />
         <PortCard />
         <SettingsCard />
+        <SelectLanguage />
         <Footer />
       </LanguageProvider>
     </div>

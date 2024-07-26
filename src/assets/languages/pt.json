@@ -1,11 +1,11 @@
 {
   "ip_address": "ENDEREÇO IP",
   "port": "PORTA",
-  "stratagems_keyscode": "TECLAS PARA O CÓDIGO DAS ESTRATAGEMAS",
+  "stratagems_keyscode": "MENU DE ESTRATAGEMAS",
   "up": "CIMA",
   "down": "BAIXO",
   "left": "ESQUERDA",
   "right": "DIREITA",
-  "footer_message": "CONECTE-SE A",
+  "footer_message": "CONECTAR A",
   "connected": "conectado"
 }
