@@ -7,6 +7,51 @@
   text-align: center;
   width: 100%;
 
+  .buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    align-self: center;
+  }
+
+  .manual,
+  .video {
+    display: flex;
+    align-items: center;
+    border: 2px solid #4f4f4f;
+    background-color: black;
+    padding: 8px;
+    width: 280px;
+    margin-bottom: 10px;
+    cursor: pointer;
+
+    &:hover {
+      border-color: #feea01;
+    }
+  }
+
+  .manual-icon {
+    background-image: url("./../../../assets/manual.webp");
+    width: 30px;
+    height: 30px;
+    background-repeat: no-repeat;
+    background-size: 30px;
+    display: inline-block;
+    padding-left: 10px;
+    margin-left: 10px;
+  }
+
+  .video-icon {
+    background-image: url("./../../../assets/youtube.webp");
+    width: 30px;
+    height: 30px;
+    background-repeat: no-repeat;
+    background-size: 30px;
+    display: inline-block;
+    padding-left: 10px;
+    margin-left: 10px;
+  }
+
   p {
     margin: 4px 0;
     padding: 0;

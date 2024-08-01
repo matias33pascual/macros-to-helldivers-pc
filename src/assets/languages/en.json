@@ -1,11 +1,13 @@
 {
   "ip_address": "IP ADDRESS",
   "port": "PORT",
-  "stratagems_keyscode": "STRATAGEMS MENU",
+  "stratagems_keyscode": "STRATEGY MENU",
   "up": "UP",
   "down": "DOWN",
   "left": "LEFT",
   "right": "RIGHT",
   "footer_message": "CONNECT TO",
-  "connected": "connected"
+  "connected": "connected",
+  "user_manual": "User Manual",
+  "video_tutorial": "Video Tutorial"
 }

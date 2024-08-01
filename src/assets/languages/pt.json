@@ -1,11 +1,13 @@
 {
   "ip_address": "ENDEREÇO IP",
   "port": "PORTA",
-  "stratagems_keyscode": "MENU DE ESTRATAGEMAS",
+  "stratagems_keyscode": "MENU DE ESTRATÉGIAS",
   "up": "CIMA",
   "down": "BAIXO",
   "left": "ESQUERDA",
   "right": "DIREITA",
   "footer_message": "CONECTAR A",
-  "connected": "conectado"
+  "connected": "conectado",
+  "user_manual": "Manual do Usuário",
+  "video_tutorial": "Vídeo Tutorial"
 }

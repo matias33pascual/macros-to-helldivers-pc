@@ -21,6 +21,8 @@ interface ILanguage {
   right: string;
   footer_message: string;
   connected: string;
+  user_manual: string;
+  video_tutorial: string;
 }
 
 interface LanguageContextProps {

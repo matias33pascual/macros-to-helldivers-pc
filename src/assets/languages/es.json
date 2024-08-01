@@ -7,5 +7,7 @@
   "left": "IZQUIERDA",
   "right": "DERECHA",
   "footer_message": "CONECTAR A",
-  "connected": "conectado"
+  "connected": "conectado",
+  "user_manual": "Manual de Usuario",
+  "video_tutorial": "Video Tutorial"
 }
