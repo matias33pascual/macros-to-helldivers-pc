@@ -6,8 +6,9 @@
   "down": "DOWN",
   "left": "LEFT",
   "right": "RIGHT",
-  "footer_message": "CONNECT TO",
+  "footer_message": "CONNECT",
   "connected": "connected",
   "user_manual": "User Manual",
-  "video_tutorial": "Video Tutorial"
+  "video_tutorial": "Video Tutorial",
+  "language": "Language"
 }

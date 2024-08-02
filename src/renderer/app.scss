@@ -7,7 +7,7 @@ body {
   background: rgb(0, 0, 0);
   background-image: url("../assets/background.jpg");
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-  overflow-y: hidden;
+  // overflow-y: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -19,6 +19,15 @@ body {
     align-items: stretch;
     margin: auto;
     gap: 1rem;
+  }
+
+  .connection-cards {
+    display: flex;
+    flex-direction: row;
+
+    :first-child {
+      margin-right: 8px;
+    }
   }
 
   .title {

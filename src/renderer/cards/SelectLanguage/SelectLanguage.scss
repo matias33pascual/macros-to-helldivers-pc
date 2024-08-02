@@ -1,4 +1,25 @@
+.container {
+  display: flex;
+  width: 100%;
+  color: white;
+  justify-content: center;
+  align-items: center;
+}
+
+.language {
+  box-sizing: border-box;
+  font-family: Geist, -apple-system, BlinkMacSystemFont, Roboto,
+    "Helvetica Neue", arial, sans-serif;
+  background-color: black;
+  border: 2px solid #3c3c3c;
+  padding: 8px;
+  margin-right: 4px;
+  flex: 1;
+  text-align: center;
+}
+
 .custom-select {
+  flex: 3;
   box-sizing: border-box;
   font-family: Geist, -apple-system, BlinkMacSystemFont, Roboto,
     "Helvetica Neue", arial, sans-serif;

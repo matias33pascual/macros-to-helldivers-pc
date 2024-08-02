@@ -23,6 +23,7 @@ interface ILanguage {
   connected: string;
   user_manual: string;
   video_tutorial: string;
+  language: string;
 }
 
 interface LanguageContextProps {

@@ -9,8 +9,10 @@ export default function App() {
     <div className="app-container">
       <p className="title">Macros to Helldivers PC</p>
       <LanguageProvider>
-        <ConnectionCard />
-        <PortCard />
+        <div className="connection-cards">
+          <ConnectionCard />
+          <PortCard />
+        </div>
         <SettingsCard />
         <SelectLanguage />
         <Footer />

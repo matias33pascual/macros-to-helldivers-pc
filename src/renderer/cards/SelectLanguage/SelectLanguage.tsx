@@ -10,25 +10,30 @@ export default function SelectLanguage() {
 
     language.changeLanguage(selectedLanguage);
 
+    localStorage.setItem("language", language);
+
     console.log(`Selected language: ${selectedLanguage}`);
   };
 
   return (
-    <select
-      className="custom-select"
-      name="language"
-      id="language-select"
-      onChange={handleSelectChange}
-    >
-      <option value="en" className="option-container">
-        English
-      </option>
-      <option value="pt" className="option">
-        Portuguese
-      </option>
-      <option value="es" className="option">
-        Español
-      </option>
-    </select>
+    <div className="container">
+      <div className="language">{language.currentLanguage.language}</div>
+      <select
+        className="custom-select"
+        name="language"
+        id="language-select"
+        onChange={handleSelectChange}
+      >
+        <option value="en" className="option-container">
+          English
+        </option>
+        <option value="pt" className="option">
+          Português
+        </option>
+        <option value="es" className="option">
+          Español
+        </option>
+      </select>
+    </div>
   );
 }
