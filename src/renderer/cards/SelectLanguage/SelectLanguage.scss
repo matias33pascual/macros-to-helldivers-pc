@@ -1,36 +1,31 @@
 .container {
   display: flex;
-  width: 100%;
   color: white;
-  justify-content: center;
-  align-items: center;
+  font-family: Geist, -apple-system, BlinkMacSystemFont, Roboto,
+    "Helvetica Neue", arial, sans-serif;
 }
 
 .language {
-  box-sizing: border-box;
-  font-family: Geist, -apple-system, BlinkMacSystemFont, Roboto,
-    "Helvetica Neue", arial, sans-serif;
   background-color: black;
-  border: 2px solid #3c3c3c;
-  padding: 8px;
-  margin-right: 4px;
+  outline: 1px solid #767676;
+  margin-right: 8px;
   flex: 1;
   text-align: center;
+  font-size: 14px;
+  text-transform: uppercase;
+  align-self: center;
+  padding: 6px;
 }
 
 .custom-select {
   flex: 3;
-  box-sizing: border-box;
-  font-family: Geist, -apple-system, BlinkMacSystemFont, Roboto,
-    "Helvetica Neue", arial, sans-serif;
   cursor: pointer;
-  width: auto;
-  height: 36px;
   text-align: center;
   background-color: black;
   color: white;
   font-size: 14px;
   text-transform: uppercase;
+  padding: 5px;
 
   &:hover {
     border-color: #feea01;

@@ -19,8 +19,8 @@ const createWindow = (): void => {
   // Create the browser window.
   const mainWindow = new BrowserWindow({
     title: "Macros to Helldivers PC",
-    width: 600,
-    height: 900,
+    width: 500,
+    height: 800,
     webPreferences: {
       nodeIntegration: true,
       contextIsolation: false,

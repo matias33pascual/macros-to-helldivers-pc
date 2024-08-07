@@ -37,8 +37,8 @@ const config: ForgeConfig = {
       name: "@electron-forge/publisher-github",
       config: {
         repository: {
-          owner: "symphonic15",
-          name: "helldivers-sync-desktop",
+          owner: "matias33pascual",
+          name: "macros-to-helldivers-pc",
         },
         prerelease: false,
         draft: true,

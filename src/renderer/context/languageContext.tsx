@@ -1,4 +1,4 @@
-import React, { createContext, useState, ReactNode } from "react";
+import React, { createContext, useState, ReactNode, useEffect } from "react";
 import es from "../../assets/languages/es.json";
 import en from "../../assets/languages/en.json";
 import pt from "../../assets/languages/pt.json";
@@ -42,8 +42,37 @@ export default function LanguageProvider({
 }) {
   const [currentLanguage, setCurrentLanguage] = useState(languages.english);
 
+  useEffect(() => {
+    setLanguageStored();
+  }, []);
+
   function changeLanguage(value: string) {
+    localStorage.setItem("language", value);
+
     switch (value) {
+      case "es":
+        setCurrentLanguage(languages.spanish);
+        break;
+
+      case "pt":
+        setCurrentLanguage(languages.portuguese);
+        break;
+
+      case "en":
+      default:
+        setCurrentLanguage(languages.english);
+        break;
+    }
+  }
+
+  function setLanguageStored() {
+    const languageStored = localStorage.getItem("language");
+
+    if (!languageStored) {
+      setCurrentLanguage(languages.english);
+    }
+
+    switch (languageStored) {
       case "es":
         setCurrentLanguage(languages.spanish);
         break;

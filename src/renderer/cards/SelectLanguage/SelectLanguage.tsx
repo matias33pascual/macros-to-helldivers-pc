@@ -7,30 +7,30 @@ export default function SelectLanguage() {
 
   const handleSelectChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
     const selectedLanguage = event.target.value;
-
     language.changeLanguage(selectedLanguage);
-
-    localStorage.setItem("language", language);
-
-    console.log(`Selected language: ${selectedLanguage}`);
   };
 
   return (
     <div className="container">
-      <div className="language">{language.currentLanguage.language}</div>
       <select
         className="custom-select"
         name="language"
         id="language-select"
         onChange={handleSelectChange}
+        defaultValue=""
       >
-        <option value="en" className="option-container">
+        <option value="" disabled>
+          {language.currentLanguage.language}
+        </option>
+        <option value="en" className="option">
           English
         </option>
         <option value="pt" className="option">
+          <span className="pt-flag" />
           Português
         </option>
         <option value="es" className="option">
+          <span className="es-flag" />
           Español
         </option>
       </select>

@@ -14,7 +14,7 @@ export function Footer() {
   const handleLinkClick = (event: any) => {
     event.preventDefault();
     shell.openExternal(
-      "https://play.google.com/store/apps/details?id=com.macrosync.helldivers&hl=en-US&ah=Oa21Ap4Zo627XSmBHykjV3KRTps"
+      "https://github.com/matias33pascual/macros-to-helldivers-pc"
     );
   };
 
@@ -42,7 +42,7 @@ export function Footer() {
             <strong>
               <p>{language.currentLanguage.footer_message}</p>
               <p>
-                <strong>Macros to Helldivers</strong>
+                <strong>Macros to Helldivers </strong>
               </p>
             </strong>
           </>

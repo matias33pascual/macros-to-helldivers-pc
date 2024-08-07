@@ -1,8 +1,11 @@
 import "./app.scss";
 import { ConnectionCard, PortCard, SettingsCard } from "./cards";
 import { Footer } from "./components";
-import LanguageProvider from "./context/languageContext";
+import LanguageProvider, {
+  LanguageContext,
+} from "renderer/context/languageContext";
 import SelectLanguage from "./cards/SelectLanguage/SelectLanguage";
+import { useContext, useEffect } from "react";
 
 export default function App() {
   return (
