@@ -1,7 +1,7 @@
 {
   "name": "macros-to-helldivers-pc",
   "productName": "Macros to Helldivers PC",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Macros to Helldivers PC",
   "main": ".webpack/main",
   "scripts": {
