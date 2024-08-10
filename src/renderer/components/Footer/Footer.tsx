@@ -11,8 +11,16 @@ export function Footer() {
 
   const language = useContext(LanguageContext);
 
-  const handleLinkClick = (event: any) => {
+  const handleUserManualClick = (event: any) => {
     event.preventDefault();
+    shell.openExternal(
+      "https://sites.google.com/view/macrostohelldiversmanual/p%C3%A1gina-principal"
+    );
+  };
+
+  const handleVideoTutorialClick = (event: any) => {
+    event.preventDefault();
+    // TODO: poner el link del video aca -> 08/08 | 12:04
     shell.openExternal(
       "https://github.com/matias33pascual/macros-to-helldivers-pc"
     );
@@ -21,11 +29,11 @@ export function Footer() {
   return (
     <div className="footer">
       <div className="buttons">
-        <div className="manual">
+        <div className="manual" onClick={handleUserManualClick}>
           <span className="manual-icon"></span>
           {language.currentLanguage.user_manual}
         </div>
-        <div className="video">
+        <div className="video" onClick={handleVideoTutorialClick}>
           <span className="video-icon"></span>
           {language.currentLanguage.video_tutorial}
         </div>
