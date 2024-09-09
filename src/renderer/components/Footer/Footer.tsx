@@ -20,9 +20,8 @@ export function Footer() {
 
   const handleVideoTutorialClick = (event: any) => {
     event.preventDefault();
-    // TODO: poner el link del video aca -> 08/08 | 12:04
     shell.openExternal(
-      "https://github.com/matias33pascual/macros-to-helldivers-pc"
+      "https://www.youtube.com/watch?v=nUkQs_cpJ4o&ab_channel=MatiasPascual"
     );
   };
 

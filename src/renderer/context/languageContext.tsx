@@ -3,8 +3,6 @@ import es from "../../assets/languages/es.json";
 import en from "../../assets/languages/en.json";
 import pt from "../../assets/languages/pt.json";
 
-// export const languages = [en, es, pt];
-
 export const languages = {
   english: en,
   spanish: es,

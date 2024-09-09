@@ -21,7 +21,7 @@
   .manual,
   .video {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
     border: 2px solid #3d3d3d;
     background-color: black;
@@ -53,6 +53,7 @@
     background-repeat: no-repeat;
     background-size: 30px;
     display: inline-block;
+    padding-right: 10px;
   }
 
   p {
