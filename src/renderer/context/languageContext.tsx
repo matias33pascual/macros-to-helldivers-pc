@@ -22,6 +22,7 @@ interface ILanguage {
   user_manual: string;
   video_tutorial: string;
   language: string;
+  code: string;
 }
 
 interface LanguageContextProps {
@@ -68,21 +69,21 @@ export default function LanguageProvider({
 
     if (!languageStored) {
       setCurrentLanguage(languages.english);
-    }
+    } else {
+      switch (languageStored) {
+        case "es":
+          setCurrentLanguage(languages.spanish);
+          break;
 
-    switch (languageStored) {
-      case "es":
-        setCurrentLanguage(languages.spanish);
-        break;
+        case "pt":
+          setCurrentLanguage(languages.portuguese);
+          break;
 
-      case "pt":
-        setCurrentLanguage(languages.portuguese);
-        break;
-
-      case "en":
-      default:
-        setCurrentLanguage(languages.english);
-        break;
+        case "en":
+        default:
+          setCurrentLanguage(languages.english);
+          break;
+      }
     }
   }
 

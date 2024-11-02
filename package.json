@@ -1,8 +1,8 @@
 {
   "name": "macros-to-helldivers-pc",
-  "productName": "Macros to Helldivers PC",
+  "productName": "Macros to Helldivers 2 PC",
   "version": "1.0.3",
-  "description": "Macros to Helldivers PC",
+  "description": "Macros to Helldivers 2 PC",
   "main": ".webpack/main",
   "scripts": {
     "start": "electron-forge start",

@@ -19,7 +19,6 @@
 
 import StratagemModel from "./stratagems-model";
 import KeyboardSimulator from "../keyboard-simulator/keyboard-simulator";
-import UserPreferences from "../keyboard-simulator/user-preferences";
 import { Subscriber } from "../connection/interfaces/subscriber/subscriber-interface";
 import {
   MessageInterface,

@@ -18,7 +18,7 @@ if (require("electron-squirrel-startup")) {
 const createWindow = (): void => {
   // Create the browser window.
   const mainWindow = new BrowserWindow({
-    title: "Macros to Helldivers PC",
+    title: "Macros to Helldivers 2 PC",
     width: 500,
     height: 800,
     webPreferences: {
@@ -40,7 +40,7 @@ const createWindow = (): void => {
   ConnectionManager.instance.mainWindows = mainWindow;
 
   // Open the DevTools.
-  // mainWindow.webContents.openDevTools();
+  mainWindow.webContents.openDevTools();
 };
 
 // This method will be called when Electron has finished

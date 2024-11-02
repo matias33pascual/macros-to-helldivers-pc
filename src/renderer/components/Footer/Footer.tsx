@@ -13,9 +13,21 @@ export function Footer() {
 
   const handleUserManualClick = (event: any) => {
     event.preventDefault();
-    shell.openExternal(
-      "https://sites.google.com/view/macrostohelldiversmanual/p%C3%A1gina-principal"
-    );
+
+    let urlManual = "";
+
+    if (language.currentLanguage.code === "es") {
+      urlManual =
+        "https://sites.google.com/view/manual-macros-es/p%C3%A1gina-principal";
+    } else if (language.currentLanguage.code === "pt") {
+      urlManual =
+        "https://sites.google.com/view/manual-macros-pt/p%C3%A1gina-principal";
+    } else {
+      urlManual =
+        "https://sites.google.com/view/manual-macros-en/p%C3%A1gina-principal";
+    }
+
+    shell.openExternal(urlManual);
   };
 
   const handleVideoTutorialClick = (event: any) => {
