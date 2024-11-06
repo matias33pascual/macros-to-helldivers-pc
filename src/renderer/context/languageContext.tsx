@@ -2,11 +2,13 @@ import React, { createContext, useState, ReactNode, useEffect } from "react";
 import es from "../../assets/languages/es.json";
 import en from "../../assets/languages/en.json";
 import pt from "../../assets/languages/pt.json";
+import ru from "../../assets/languages/ru.json";
 
 export const languages = {
   english: en,
   spanish: es,
   portuguese: pt,
+  russian: ru,
 };
 
 interface ILanguage {
@@ -23,6 +25,7 @@ interface ILanguage {
   video_tutorial: string;
   language: string;
   code: string;
+  download_app: string;
 }
 
 interface LanguageContextProps {
@@ -57,6 +60,10 @@ export default function LanguageProvider({
         setCurrentLanguage(languages.portuguese);
         break;
 
+      case "ru":
+        setCurrentLanguage(languages.russian);
+        break;
+
       case "en":
       default:
         setCurrentLanguage(languages.english);
@@ -77,6 +84,10 @@ export default function LanguageProvider({
 
         case "pt":
           setCurrentLanguage(languages.portuguese);
+          break;
+
+        case "ru":
+          setCurrentLanguage(languages.russian);
           break;
 
         case "en":

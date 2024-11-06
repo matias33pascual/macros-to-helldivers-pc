@@ -1,8 +1,8 @@
-# Macros to Helldivers 2 PC
+# Macros to HD2 Game PC
 
-**Macros to Helldivers 2 PC** es una aplicación de escritorio diseñada para iniciar un servidor en la computadora que recibirá las estratagemas seleccionadas de la aplicación mobile y simulará las teclas como si las presionara el usuario durante el juego.
+**Macros to HD2 Game PC** es una aplicación de escritorio diseñada para iniciar un servidor en la computadora que recibirá las estratagemas seleccionadas de la aplicación mobile y simulará las teclas como si las presionara el usuario durante el juego.
 
-Para que funcione correctamente, la aplicación debe conectarse a la aplicación mobile [Macros to Helldivers](https://github.com/matias33pascual/macros-to-helldivers).
+Para que funcione correctamente, la aplicación debe conectarse a la aplicación mobile [Macros to HD2](https://github.com/matias33pascual/macros-to-helldivers).
 
 Para conectar las aplicaciones puedes utilizar el [Manual de usuario](https://sites.google.com/d/1wV6G_jgg0fkdAwXpqCNoDhmJfu0CHSRz/p/1F5WB34d2O7UOeURxEBLVzt9IqUOmI3kj/edit).
 

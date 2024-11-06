@@ -33,6 +33,10 @@ export default function SelectLanguage() {
           <span className="es-flag" />
           Español
         </option>
+        <option value="ru" className="option">
+          <span className="ru-flag" />
+          РУССКИЙ
+        </option>
       </select>
     </div>
   );

@@ -18,7 +18,7 @@ if (require("electron-squirrel-startup")) {
 const createWindow = (): void => {
   // Create the browser window.
   const mainWindow = new BrowserWindow({
-    title: "Macros to Helldivers 2 PC",
+    title: "Macros to HD2 Game PC",
     width: 500,
     height: 800,
     webPreferences: {

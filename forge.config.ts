@@ -18,6 +18,9 @@ const config: ForgeConfig = {
   rebuildConfig: {},
   makers: [
     new MakerSquirrel({
+      name: "macros-to-helldivers-pc",
+      iconUrl:
+        "https://raw.githubusercontent.com/matias33pascual/macros-to-helldivers-pc/refs/heads/master/icon.ico",
       setupIcon: "./src/assets/icon.ico",
     }),
     new MakerZIP({}, ["darwin"]),

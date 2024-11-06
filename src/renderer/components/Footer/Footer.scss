@@ -19,14 +19,15 @@
   }
 
   .manual,
-  .video {
+  .video,
+  .playstore {
     display: flex;
     justify-content: center;
     align-items: center;
     border: 2px solid #3d3d3d;
     background-color: black;
     padding: 2px;
-    margin-bottom: 4px;
+    margin-bottom: 1em;
     height: 40px;
     text-align: center;
     cursor: pointer;
@@ -44,6 +45,16 @@
     background-repeat: no-repeat;
     background-size: 30px;
     display: inline-block;
+  }
+
+  .playstore-icon {
+    background-image: url("./../../../assets/playstore.webp");
+    width: 30px;
+    height: 30px;
+    background-repeat: no-repeat;
+    background-size: 30px;
+    display: inline-block;
+    padding-right: 10px;
   }
 
   .video-icon {
@@ -96,17 +107,6 @@
         opacity: 0.8;
         border: 1px solid white;
       }
-    }
-
-    .google-icon {
-      background-image: url("./../../../assets/google-play.png");
-      background-repeat: no-repeat;
-      background-size: 22px;
-      width: 22px;
-      height: 22px;
-      display: inline-block;
-      padding-right: 2px;
-      padding-top: 2px;
     }
   }
 }

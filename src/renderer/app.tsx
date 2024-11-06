@@ -7,7 +7,7 @@ import SelectLanguage from "./cards/SelectLanguage/SelectLanguage";
 export default function App() {
   return (
     <div className="app-container">
-      <p className="title">Macros to Helldivers 2 PC</p>
+      <p className="title">Macros to HD2 Game PC</p>
       <LanguageProvider>
         <div className="connection-cards">
           <ConnectionCard />

@@ -37,6 +37,13 @@ export function Footer() {
     );
   };
 
+  const handlePlaystoreClick = (event: any) => {
+    event.preventDefault();
+    shell.openExternal(
+      "https://play.google.com/store/apps/details?id=com.macros.helldivers"
+    );
+  };
+
   return (
     <div className="footer">
       <div className="buttons">
@@ -49,11 +56,15 @@ export function Footer() {
           {language.currentLanguage.video_tutorial}
         </div>
       </div>
+      <div className="playstore" onClick={handlePlaystoreClick}>
+        <span className="playstore-icon"></span>
+        {language.currentLanguage.download_app}
+      </div>
       <div>
         {userConnected ? (
           <p className="text user-connected">
             <strong>
-              Macros to Helldivers {language.currentLanguage.connected}
+              Macros to HD2 Game {language.currentLanguage.connected}
             </strong>
           </p>
         ) : (
@@ -61,7 +72,7 @@ export function Footer() {
             <strong>
               <p>{language.currentLanguage.footer_message}</p>
               <p>
-                <strong>Macros to Helldivers </strong>
+                <strong>Macros to HD2 Game</strong>
               </p>
             </strong>
           </>
