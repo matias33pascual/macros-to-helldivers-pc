@@ -19,7 +19,7 @@ export default class KeyboardSimulator {
     const { keysCode } = stratagem;
 
     let pressKey = "";
-
+    this.simulateHoldAtivationStratagem(true);
     keysCode.forEach((key: string) => {
       switch (key) {
         case "up":
@@ -50,9 +50,15 @@ export default class KeyboardSimulator {
         );
       }
     });
+    this.simulateHoldAtivationStratagem(false);
   }
 
   private simulateKeyOnKeyboard(key: string) {
     robot.keyTap(key);
+  }
+
+  private simulateHoldAtivationStratagem(active: boolean) {
+    console.log("KeyBoardSimulator.simulateHoldAtivationStratagem");
+    robot.keyToggle("control", active ? "down" : "up");
   }
 }
