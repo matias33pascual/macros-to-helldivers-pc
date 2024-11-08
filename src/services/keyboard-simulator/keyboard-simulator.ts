@@ -20,6 +20,8 @@ export default class KeyboardSimulator {
 
     let pressKey = "";
 
+    this.simulateHoldAtivationStratagem(true);
+
     keysCode.forEach((key: string) => {
       switch (key) {
         case "up":
@@ -50,9 +52,15 @@ export default class KeyboardSimulator {
         );
       }
     });
+
+    this.simulateHoldAtivationStratagem(false);
   }
 
   private simulateKeyOnKeyboard(key: string) {
     robot.keyTap(key);
+  }
+
+  private simulateHoldAtivationStratagem(active: boolean) {
+    robot.keyToggle(UserPreferences.open, active ? "down" : "up");
   }
 }

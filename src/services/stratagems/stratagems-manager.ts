@@ -26,6 +26,7 @@ import {
 } from "../connection/interfaces/message/message-interface";
 
 import jsonStratagems from "./json/stratagems.json";
+import UserPreferences from "../keyboard-simulator/user-preferences";
 
 export default class StratagemsManager implements Subscriber {
   private completeStratagemsList: StratagemModel[] = [];

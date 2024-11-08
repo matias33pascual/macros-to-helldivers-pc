@@ -1,5 +1,6 @@
 import { Icon } from "@nimbus-ds/components";
 import {
+  AlignCenterIcon,
   ChevronDownIcon,
   ChevronLeftIcon,
   ChevronRightIcon,
@@ -10,6 +11,7 @@ import { Card, Input } from "renderer/components";
 import { CUSTOM_KEY_MAPPING } from "renderer/constants";
 import { LanguageContext } from "renderer/context/languageContext";
 import { useUserKeys } from "renderer/hooks";
+import "./SettingsCard.scss";
 
 export function SettingsCard() {
   const { userKeys, setUserKey } = useUserKeys();
@@ -28,6 +30,19 @@ export function SettingsCard() {
 
   return (
     <Card title={language.currentLanguage.stratagems_keyscode}>
+      <div className="info">{language.currentLanguage.menu_tip}</div>
+
+      <Input
+        name="open"
+        label={language.currentLanguage.open_menu}
+        placeholder={language.currentLanguage.open_menu}
+        append={<Icon source={<AlignCenterIcon />} />}
+        appendPosition="start"
+        hiddenCaret
+        value={userKeys.open}
+        readOnly
+        onKeyDown={handleKeyDown}
+      />
       <Input
         name="up"
         label={language.currentLanguage.up}

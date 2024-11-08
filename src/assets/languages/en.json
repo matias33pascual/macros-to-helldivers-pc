@@ -2,6 +2,8 @@
   "ip_address": "IP ADDRESS",
   "port": "PORT",
   "stratagems_keyscode": "STRATAGEMS MENU",
+  "menu_tip": "Set the game so that the menu is in HOLD mode",
+  "open_menu": "OPEN MENU",
   "up": "UP",
   "down": "DOWN",
   "left": "LEFT",

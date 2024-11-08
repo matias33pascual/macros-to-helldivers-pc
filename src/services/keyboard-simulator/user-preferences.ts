@@ -3,9 +3,8 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable lines-between-class-members */
 
-import StratagemsModel from "../stratagems/stratagems-model";
-
 export interface UserKeys {
+  open: string;
   up: string;
   down: string;
   left: string;
@@ -15,6 +14,7 @@ export interface UserKeys {
 type UserKey = keyof UserKeys;
 
 export default class UserPreferences {
+  static open = "control";
   static up = "up";
   static down = "down";
   static left = "left";
@@ -22,6 +22,7 @@ export default class UserPreferences {
 
   public static getUserAssignedKeys(): UserKeys {
     return {
+      open: this.open,
       up: this.up,
       down: this.down,
       left: this.left,
@@ -34,23 +35,10 @@ export default class UserPreferences {
   }
 
   public static setUserAssignedKeys(userKeys: UserKeys) {
+    this.open = userKeys.open;
     this.up = userKeys.up;
     this.down = userKeys.down;
     this.left = userKeys.left;
     this.right = userKeys.right;
-  }
-
-  public static mapStratagemKeycodeToUserPreferences(
-    stratagem: StratagemsModel
-  ): string[] {
-    const { keysCode: stratagemKeycodes } = stratagem;
-    const userKeys: string[] = [];
-
-    stratagemKeycodes.forEach((key: UserKey) => {
-      const userKey: string = this.getUserAssignedKey(key) as string;
-      userKeys.push(userKey);
-    });
-
-    return userKeys;
   }
 }

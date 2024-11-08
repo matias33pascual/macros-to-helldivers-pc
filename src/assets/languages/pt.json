@@ -2,6 +2,8 @@
   "ip_address": "ENDEREÇO IP",
   "port": "PORTA",
   "stratagems_keyscode": "MENU DE ESTRATAGEMAS",
+  "menu_tip": "Configurar o jogo para que o menu esteja no modo MANTER",
+  "open_menu": "ABRIR MENU",
   "up": "CIMA",
   "down": "BAIXO",
   "left": "ESQUERDA",

@@ -1,7 +1,7 @@
 {
   "name": "macros-to-helldivers-pc",
   "productName": "Macros to HD2 Game PC",
-  "version": "1.0.3",
+  "version": "1.2.0",
   "description": "Macros to HD2 Game PC",
   "main": ".webpack/main",
   "scripts": {

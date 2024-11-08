@@ -16,15 +16,27 @@ export function Footer() {
 
     let urlManual = "";
 
-    if (language.currentLanguage.code === "es") {
-      urlManual =
-        "https://sites.google.com/view/manual-macros-es/p%C3%A1gina-principal";
-    } else if (language.currentLanguage.code === "pt") {
-      urlManual =
-        "https://sites.google.com/view/manual-macros-pt/p%C3%A1gina-principal";
-    } else {
-      urlManual =
-        "https://sites.google.com/view/manual-macros-en/p%C3%A1gina-principal";
+    switch (language.currentLanguage.code) {
+      case "es":
+        urlManual =
+          "https://sites.google.com/view/manual-macros-es/p%C3%A1gina-principal";
+        break;
+
+      case "pt":
+        urlManual =
+          "https://sites.google.com/view/manual-macros-pt/p%C3%A1gina-principal";
+        break;
+
+      case "ru":
+        urlManual =
+          "https://sites.google.com/view/manual-macros-ru/p%C3%A1gina-principal";
+        break;
+
+      case "en":
+      default:
+        urlManual =
+          "https://sites.google.com/view/manual-macros-en/p%C3%A1gina-principal";
+        break;
     }
 
     shell.openExternal(urlManual);

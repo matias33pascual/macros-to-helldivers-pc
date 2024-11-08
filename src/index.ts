@@ -20,7 +20,7 @@ const createWindow = (): void => {
   const mainWindow = new BrowserWindow({
     title: "Macros to HD2 Game PC",
     width: 500,
-    height: 800,
+    height: 900,
     webPreferences: {
       nodeIntegration: true,
       contextIsolation: false,
@@ -29,8 +29,6 @@ const createWindow = (): void => {
     },
     icon: path.join(__dirname, "icon.ico"),
   });
-
-  console.log(path.join(__dirname, "icon.ico"));
 
   mainWindow.menuBarVisible = false;
 

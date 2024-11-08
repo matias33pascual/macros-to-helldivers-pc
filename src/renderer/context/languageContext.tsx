@@ -15,6 +15,8 @@ interface ILanguage {
   ip_address: string;
   port: string;
   stratagems_keyscode: string;
+  menu_tip: string;
+  open_menu: string;
   up: string;
   down: string;
   left: string;
