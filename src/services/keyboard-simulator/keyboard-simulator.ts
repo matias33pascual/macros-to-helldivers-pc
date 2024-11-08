@@ -57,6 +57,11 @@ export default class KeyboardSimulator {
     robot.keyTap(key);
   }
 
+  /**
+   * Allows to simulate the hold activation of the stratagem menu.
+   * @param active 
+   * 
+   */
   private simulateHoldAtivationStratagem(active: boolean) {
     console.log("KeyBoardSimulator.simulateHoldAtivationStratagem");
     robot.keyToggle("control", active ? "down" : "up");
